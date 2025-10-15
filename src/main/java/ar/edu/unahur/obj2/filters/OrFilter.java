@@ -11,13 +11,16 @@ public class OrFilter extends CompositeFilter{
     }
 
     public OrFilter(IFilter aFilter, IFilter newFilter) {
-
+        this.filters.remove(aFilter);
+        this.filters.add(newFilter);
     }
-
-
+    @Override
     public Boolean apply(Country aCountry) {
-
+        return this.filters.stream().anyMatch(filter -> filter.apply(aCountry));
     }
-
-    public IFilter and(IFilter aFilter)
+    
+    @Override
+    public IFilter and(IFilter aFilter) {
+        return new AndFilter(this, aFilter);
+    }
 }
