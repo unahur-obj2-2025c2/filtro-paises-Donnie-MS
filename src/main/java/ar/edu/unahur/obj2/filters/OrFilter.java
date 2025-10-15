@@ -1,6 +1,9 @@
 package ar.edu.unahur.obj2.filters;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import ar.edu.unahur.obj2.model.Country;
 
 public class OrFilter extends CompositeFilter{
     public OrFilter(List<IFilter> filters) {

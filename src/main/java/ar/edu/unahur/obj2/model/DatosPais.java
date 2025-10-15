@@ -11,9 +11,9 @@ public record DatosPais(
     String capital, 
     String region, 
     @JsonAlias("subregion") String subRegion, 
-    @JsonAlias("population") Long poblacion, 
+    @JsonAlias("population") Long population, 
     @JsonAlias("borders") List<String> limites, 
-    @JsonAlias("languages") List<Idioma> idiomas,
+    @JsonAlias("languages") List<Language> languages,
     Integer area) {
 
 }

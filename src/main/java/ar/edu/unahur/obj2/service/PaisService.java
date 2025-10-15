@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import ar.edu.unahur.obj2.model.DatosPais;
-import ar.edu.unahur.obj2.model.Pais;
+import ar.edu.unahur.obj2.model.Country;
 
 public class PaisService implements IPaisService {
 
@@ -14,12 +14,12 @@ public class PaisService implements IPaisService {
     private List <DatosPais> datosPaises = new ArrayList<>();
 
     @Override
-    public List<Pais> getPaises() { 
+    public List<Country> getPaises() { 
         if(datosPaises.isEmpty()){
             datosPaises = solicitarPaises();
         }  
         return datosPaises.stream()
-                .map(dp -> new Pais(dp))
+                .map(dp -> new Country(dp))
                 .collect(Collectors.toList());
         
     }
